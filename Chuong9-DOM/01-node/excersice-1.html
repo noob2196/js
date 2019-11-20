@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function () {
+
+        }
+        function addFile() {
+            var form = document.getElementById('form');
+            var btnAdd = document.getElementById('btnAdd');
+            var nodeRow = btnAdd.previousSibling;
+            if (nodeRow.nodeName == "#text") {
+                nodeRow = nodeRow.previousSibling;
+            }
+            var nodeCopy = nodeRow.cloneNode(true);
+            form.insertBefore(nodeCopy,btnAdd);
+        }
+    </script>
+    <style>
+        .form {
+            width: 500px;
+            min-height: 200px;
+            border: 1px solid red;
+            padding: 20px;
+            margin: 20px auto;
+        }
+        .row {
+            border: 1px solid #ccc;
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="form" class="form">
+        <div class="row">
+            <label>Picture: </label>
+            <input type="file">
+        </div>
+        <input type="button" name="addFile" id="btnAdd" value="Add File" onclick="addFile();">
+        <input type="button" name="addFile" id="btnAdd" value="Upload now">
+    </div>
+
+</body>
+
+</html>

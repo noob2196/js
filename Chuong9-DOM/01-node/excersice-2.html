@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function () {
+
+        }
+
+    </script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .left {
+            width: 35%;
+            height: 200px;
+            border: 1px solid blue;
+            display: inline-block;
+        }
+
+        .center {
+            width: 25%;
+            height: 200px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .right {
+            width: 35%;
+            height: 200px;
+            border: 1px solid blue;
+            display: inline-block;
+        }
+
+        #moveRight {
+            position: absolute;
+            top: 10%;
+            left: 45%;
+        }
+
+        #moveLeft {
+            position: absolute;
+            top: 13%;
+            left: 45%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left">
+    </div>
+    <div class="center"></div>
+        <input type="button" name="move-right" id="moveRight" value="move right">
+        <input type="button" name="move-left" id="moveLeft" value="move left">
+    </div>
+    <div class="right">
+    </div>
+</body>
+
+</html>
