@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/01.css" />
+    <script type="text/javascript">
+        function reNode() {
+            var boxA = document.getElementById('boxA');
+            var elements = boxA.childNodes;
+            var boxB = document.getElementById('boxB');
+            var elementsB = boxB.childNodes;
+            for (var i = 0; i < elements.length; i++) {
+                if (elements.item(i).textContent == "About") {
+                    for (var j = 0; j < elementsB.length; j++) {
+                        if (elementsB.item(j).textContent == "Contact") {
+                            boxB.insertBefore(elements.item(i),elementsB.item(j))
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        .boxA {
+            height: 120px;
+        }
+
+        .boxA>div {
+            border: 1px solid #ccc;
+            padding: 3px;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <input onclick="reNode();" id="copy" type="button" value="Submit" />
+    <div id="boxA" class="boxA">
+        <div>Home</div>
+        <div>About</div>
+        <div>Product</div>
+    </div>
+    <div id="boxB" class="boxA">
+        <p>P tag</p>
+        <div>Contact</div>
+        <div>Something</div>
+    </div>
+</body>
+
+</html>

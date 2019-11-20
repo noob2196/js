@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/01.css" />
+    <script type="text/javascript">
+        function addNewNode() {
+            var boxA = document.getElementById('boxA');
+            var firstNode = boxA.firstChild;
+            if (firstNode.nodeName == "#text") {
+                firstNode = firstNode.nextSibling;
+            }
+            console.log(firstNode);
+            var nodeCopy = firstNode.cloneNode(true);
+            console.log(nodeCopy);
+
+            var boxB = document.getElementById('boxB');
+            boxB.appendChild(nodeCopy);
+            
+        }
+    </script>
+    <style type="text/css">
+        .boxA {
+            height: 120px;
+        }
+
+        .boxA>div {
+            border: 1px solid #ccc;
+            padding: 3px;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <input onclick="addNewNode();" id="copy" type="button" value="Kiem tra node con" />
+    <div id="boxA" class="boxA">
+        <div>Home</div>
+        <div>About</div>
+        <div>Product</div>
+    </div>
+    <div id="boxB" class="boxA">Box B
+    </div>
+</body>
+
+</html>

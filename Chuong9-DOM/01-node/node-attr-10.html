@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/01.css" />
+    <script type="text/javascript">
+        window.onload = function () {
+            var boxA = document.getElementById('boxA');
+            var elements = boxA.childNodes;
+            for (var i = 0; i < elements.length; i++) {
+                // console.log(elements.item(i));
+                var element = elements.item(i);
+                if(element.nodeType == 3) {
+                    console.log(element.nodeValue);   
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="boxA" class="boxA">
+        Kieu cua node 1
+        <p>P tag</p>
+        Kieu cua node 2
+        <p>P tag</p>
+        Kieu cua node 3
+        <p>P tag</p>
+    </div>
+</body>
+
+</html>
