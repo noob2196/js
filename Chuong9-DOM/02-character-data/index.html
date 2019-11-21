@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .boxA {
+            width: 500px;
+            height: 200px;
+            border: 2px solid red;
+            padding: 10px;
+            margin: 20px auto;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var boxA  = document.getElementById("boxA")
+
+            var nodeText = boxA.childNodes[0];
+            console.log(nodeText);
+            console.log(nodeText.nodeValue);
+            console.log(nodeText.data);
+            console.log(nodeText.length);
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="boxA" class="boxA">
+        Manchester UTD
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .boxA {
+            width: 500px;
+            height: 200px;
+            border: 2px solid red;
+            padding: 10px;
+            margin: 20px auto;
+        }
+    </style>
+    <script type="text/javascript">
+        function process() {
+            var textBoxA = document.getElementById('boxA').firstChild;
+            console.log(textBoxA);
+
+            var tmp = textBoxA.substringData(0, 14);
+            console.log(tmp);
+            
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" id="process" value="process" onclick="process();">
+    <div id="boxA" class="boxA">Manchester UTD vs Manchester City</div>
+</body>
+
+</html>

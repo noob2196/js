@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        function process() {
+            var newNode = document.createElement('div');
+            newNode.setAttribute('class', 'boxA');
+            newNode.setAttribute('id', 'boxB');
+            newNode.setAttribute('title', "This is the title");
+            newNode.setAttribute('style', 'color:red');
+
+            var nodeText = document.createTextNode("Manchester UTD");
+            newNode.appendChild(nodeText);
+            var parent = document.body;
+            console.log(parent);
+            parent.appendChild(newNode);
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="boxA" class="boxA" title="This is a text" style="color: red;">Manchester UTD</div>
+    <input type="button" id="process" value="process" onclick="process();">
+</body>
+
+</html>
