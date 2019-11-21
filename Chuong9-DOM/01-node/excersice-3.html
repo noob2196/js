@@ -9,31 +9,33 @@
     <script type="text/javascript">
         function moveR() {
             var boxLeft = document.getElementById('left');
-            var firstNodeLeft = boxLeft.firstChild;
-            if (boxLeft.childNodes.length <=1) return;
-            if (firstNodeLeft.nodeName == "#text") {
-                firstNodeLeft = firstNodeLeft.nextSibling;
-                var nodeText  = firstNodeLeft.previousSibling;
+            var firstNode = boxLeft.firstChild;
+            if (boxLeft.childNodes.length <= 1) return;
+            if (firstNode.nodeName == "#text") {
+                firstNode = firstNode.nextSibling;
+                var nodeText = firstNode.previousSibling;
                 boxLeft.removeChild(nodeText);
             }
             var boxRight = document.getElementById('right');
-            boxRight.appendChild(firstNodeLeft);
+            firstNode.style.backgroundColor = "#efef";
+            boxRight.appendChild(firstNode);
         }
         function moveL() {
             var boxRight = document.getElementById('right');
             var lastNode = boxRight.lastChild;
             console.log(boxRight.childNodes.length);
-            
-            if (boxRight.childNodes.length <=1) return;
+
+            if (boxRight.childNodes.length <= 1) return;
             if (lastNode.nodeName == "#text") {
                 lastNode = lastNode.previousSibling;
-                var nodeText  = lastNode.nextSibling;
+                var nodeText = lastNode.nextSibling;
                 boxRight.removeChild(nodeText);
             }
 
             var boxLeft = document.getElementById('left');
             var nodeChild = boxLeft.firstChild;
-            boxLeft.insertBefore(lastNode,nodeChild);
+            lastNode.style.backgroundColor = "#ffff"
+            boxLeft.insertBefore(lastNode, nodeChild);
         }
     </script>
     <style>
@@ -79,6 +81,7 @@
             padding: 5px;
             border-radius: 5%;
         }
+
         .fLeft {
             float: left;
         }
@@ -89,7 +92,7 @@
             border: 1px solid blue;
             border-radius: 12%;
             display: block;
-            margin: 5px auto ;
+            margin: 5px auto;
             padding: 5px;
             width: 50%;
         }
@@ -101,7 +104,7 @@
             border-radius: 12%;
             display: block;
             padding: 5px;
-            margin: 5px auto ;
+            margin: 5px auto;
             width: 50%;
         }
     </style>
