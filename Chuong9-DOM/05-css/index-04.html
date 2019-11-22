@@ -10,25 +10,21 @@
     <script type="text/javascript">
         function process() {
             var boxA = document.getElementById('boxA');
-            console.log(boxA.style);
-            var txt = '';
-            txt = "boxA.style: "
-            + boxA.style + "<br>"
-            + "color: " + boxA.style.color + "<br>" 
-            + "bacground color: "
-            + boxA.style.backgroundColor + "<br>"
-            + "padding left: "
-            + boxA.style.paddingLeft;
 
-            var boxInfor = document.getElementById('infor');
-            boxInfor.innerHTML = txt;
+            
+            var ccsBoxA = window.getComputedStyle(boxA,null);
+
+            var txt  = '';
+            txt = "width: " + ccsBoxA.width;
+            var infor = document.getElementById('infor');
+            infor.innerHTML = txt;
         }
     </script>
 </head>
 
 <body>
     <h1>CSSStyleDeclaration object</h1>
-    <div id="boxA" class="boxA" style="color: blue;background-color:  darkgray;">Css object</div>
+    <div id="boxA" class="boxA color" >Css object</div>
     <input type="button" value="process" id="process" onclick="process();">
     <div id="infor" class="boxA"></div>
 </body>

@@ -1,6 +1,6 @@
 .boxA {
    width: 300px;
-   height: 20px;
+   min-height: 20px;
    border: 2px solid brown;
    margin: 20px auto;
    padding: 10px;

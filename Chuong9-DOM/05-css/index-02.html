@@ -10,18 +10,8 @@
     <script type="text/javascript">
         function process() {
             var boxA = document.getElementById('boxA');
-            console.log(boxA.style);
-            var txt = '';
-            txt = "boxA.style: "
-            + boxA.style + "<br>"
-            + "color: " + boxA.style.color + "<br>" 
-            + "bacground color: "
-            + boxA.style.backgroundColor + "<br>"
-            + "padding left: "
-            + boxA.style.paddingLeft;
-
-            var boxInfor = document.getElementById('infor');
-            boxInfor.innerHTML = txt;
+            boxA.style.fontSize = "20px";
+            boxA.style.fontWeight = "bold";
         }
     </script>
 </head>
