@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+        function process() {
+            var boxA = document.getElementById('boxA');
+
+
+            var ccsBoxA = window.getComputedStyle(boxA, null);
+            var innerWidth = parseInt(ccsBoxA.paddingLeft)
+                + parseInt(ccsBoxA.width)
+                + parseInt(ccsBoxA.paddingRight);
+            console.log(innerWidth);
+
+            var innerHight =  parseInt(ccsBoxA.paddingTop)
+                + parseInt(ccsBoxA.height)
+                + parseInt(ccsBoxA.paddingBottom);
+            console.log(innerHight);
+
+            var txt = '';
+            txt = "innerWidth: " + innerWidth + "px";
+            txt += "<br>innerHeight: " + innerHight + "px";
+            var infor = document.getElementById('infor');
+            infor.innerHTML = txt;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>CSSStyleDeclaration object</h1>
+    <div id="boxA" class="boxA color">Css object</div>
+    <input class="button" type="button" value="process" id="process" onclick="process();">
+    <div id="infor" class="boxA"></div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+        function process() {
+            var boxA = document.getElementById('boxA');
+
+
+            var ccsBoxA = window.getComputedStyle(boxA, null);
+            var vouterWidth = parseInt(ccsBoxA.borderLeftWidth)
+            + parseInt(ccsBoxA.paddingLeft)
+            + parseInt(ccsBoxA.width)
+            + parseInt(ccsBoxA.borderRightWidth)
+            + parseInt(ccsBoxA.paddingRight);
+            console.log(vouterWidth);
+
+            var vouterHight = parseInt(ccsBoxA.borderTopWidth)
+            + parseInt(ccsBoxA.paddingTop)
+            + parseInt(ccsBoxA.height)
+            + parseInt(ccsBoxA.borderBottomWidth)
+            + parseInt(ccsBoxA.paddingBottom);
+            console.log(vouterHight);
+            
+            var txt = '';
+            txt = "outerWidth: " + vouterWidth + "px";
+            txt += "<br>outerHeight: " + vouterHight + "px";
+            var infor = document.getElementById('infor');
+            infor.innerHTML = txt;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>CSSStyleDeclaration object</h1>
+    <div id="boxA" class="boxA color">Css object</div>
+    <input class="button" type="button" value="process" id="process" onclick="process();">
+    <div id="infor" class="boxA"></div>
+</body>
+
+</html>

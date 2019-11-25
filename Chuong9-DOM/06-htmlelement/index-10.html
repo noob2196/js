@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/myCssElement2.js"></script>
+    <title>Document</title>
+    <script type="text/javascript">
+            // attachEvent
+            window.onload = function () {
+                /* 
+                    ===================================
+                     btnProcess
+                    ===================================
+                */
+                var btnProcess = document.getElementById('process');
+                if (typeof(btnProcess.attachEvent) == 'function') {
+                    btnProcess.attachEvent('onclick', process);
+                } else {
+                    btnProcess.addEventListener('click',process,false);
+                }
+                /* 
+                    ===================================
+                     btnReset
+                    ===================================
+                */
+                var btnReset = document.getElementById('reset');
+                if (typeof(btnReset.attachEvent) == 'function') {
+                    btnReset.attachEvent('onclick', reset);
+                } else {
+                    btnReset.addEventListener('click',reset,false);
+                }
+                /* 
+                    ===================================
+                     btnRemove
+                    ===================================
+                */
+                var btnRemove = document.getElementById('remove');
+                if (typeof(btnRemove.attachEvent) == 'function') {
+                    btnRemove.attachEvent('onclick', removeEvent);
+                } else {
+                    btnRemove.addEventListener('click',removeEvent,false);
+                }
+            }
+
+            function process() {
+                var boxA = document.getElementById('boxA');
+                var elemts = boxA.children;
+                for (var i = 0; i < elemts.length; i++) {
+                    var objHTML = elemts[i];
+                    console.log(objHTML);
+                    if (i%2 == 0) {
+                        objHTML.style.backgroundColor = "red";
+                    }else {
+                        objHTML.style.backgroundColor = "blue";
+                    }
+                }
+            }
+
+            function reset() {
+                var boxA = document.getElementById('boxA');
+                var elemts = boxA.children;
+                for (var i = 0; i < elemts.length; i++) {
+                    var objHTML = elemts[i];
+                    if (typeof(objHTML.removeAttribute)=='function') {
+                        objHTML.removeAttribute('style');
+                    } else {
+                        objHTML.removeProperty('style');
+                    }
+                }
+            }
+
+            function removeEvent() {
+                var btnProcess = document.getElementById('process');
+
+                if (typeof(btnProcess.detachEvent) == 'function') {
+                    btnProcess.detachEvent('onclick',process);
+                } else {
+                    btnProcess.removeEventListener('click',process,false);
+                }
+            }
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>HTMLElement</h1>
+    <div id="boxA" class="boxA">
+        <div>1. HTML</div>
+        <div>2. CSS</div>
+        <div>3. JS</div>
+        <div>4. NODEJS</div>
+        <div>5. NODEJS</div>
+        <div>6. NODEJS</div>
+        <div>7. NODEJS</div>
+    </div>
+    <center>
+        <input class="button" type="button" value="Process" id="process">
+        <input class="button" type="button" value="Reset" id="reset">
+        <input class="button" type="button" value="Remove event" id="remove">
+    </center>
+</body>
+
+</html>

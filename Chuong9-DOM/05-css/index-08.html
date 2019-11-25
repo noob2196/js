@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/myCssElement.js"></script>
+    <script type="text/javascript">
+        function process() {
+            var boxA = document.getElementById('boxA');
+            var cssBoxA = new myssElement(boxA);
+            console.log(cssBoxA.element);
+            // console.log(cssBoxA.cssStyle());
+            console.log(cssBoxA.cssStyle().color);
+            console.log(cssBoxA.outerWidth());
+            console.log(cssBoxA.outerHeight());
+            console.log(cssBoxA.innerWidth());
+            console.log(cssBoxA.innerHeight());
+            
+        }
+    </script>
+</head>
+
+<body>
+    <h1>CSSStyleDeclaration object</h1>
+    <div id="boxA" class="boxA color">Css object</div>
+    <input class="button" type="button" value="process" id="process" onclick="process();">
+    <div id="infor" class="boxA"></div>
+</body>
+
+</html>

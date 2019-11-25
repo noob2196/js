@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+        window.onload = function () {
+            console.log(document.forms);
+            console.log(document.appForm.user);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>HTMLDocument</h1>
+    <form action="abc.php" name="appForm" method="post" enctype="multipart/form-data">
+        <label>User: </label>
+        <input type="text" name="user" class="input">
+    </form>
+    <form action="abc.php" name="appWeb" method="post" enctype="multipart/form-data">
+        <label>Email: </label>
+        <input type="text" name="email" class="input">
+    </form>
+</body>
+
+</html>

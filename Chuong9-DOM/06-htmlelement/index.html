@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <script type="text/javascript">
+        function process () {
+            var boxA = document.getElementById('boxA');
+            var infor = document.getElementById('infor');
+            var txt  = '';
+
+            txt = "childNodes: " + boxA.childNodes;
+            txt += "<br>children: " + boxA.children;
+            txt += "<br>className: " + boxA.className;
+            txt += "<br>dir: " + boxA.firstChild.nextSibling.dir;
+            txt += "<br>document: " + document;
+            txt += "<br>id: " + boxA.id;
+            txt += "<br>style: " + boxA.style.cssText;
+            // txt += boxA.innerHTML;
+            // txt += boxA.innerText;
+            infor.innerHTML = txt;
+            
+            console.log(boxA.innerText);
+            
+            // infor.style.opacity = "0.5";
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>HTMLElement</h1>
+    <div id="infor" class="boxA" style="color: red;"></div>
+    <div id="boxA" class="boxA">
+        <div dir="rtl">1. HTML</div>
+        <div dir="ltr">2. CSS</div>
+        <div>3. JS</div>
+        <div>4. NODEJS</div>
+    </div>
+    <input class="button" type="button" value="process" id="process" onclick="process();">
+</body>
+</html>

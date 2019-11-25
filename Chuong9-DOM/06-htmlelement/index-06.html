@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/myCssElement2.js"></script>
+    <title>Document</title>
+    <script type="text/javascript">
+        function process() {
+            var boxA = document.getElementById('boxA');
+            var infor = document.getElementById('infor');
+            var cssBoxA = new myssElement(boxA);
+            var txt = '';
+
+            txt = "outerWidth: " + cssBoxA.outerWidth();
+            txt += "<br>outerHeight: " + cssBoxA.outerHeight();
+            txt += "<br>innerHeight: " + cssBoxA.innerHeight();
+            txt += "<br>innerWidth: " + cssBoxA.innerWidth();
+            txt += "<br>positionMax-left: " + cssBoxA.position("max").left;
+            txt += "<br>positionMax-right: " + cssBoxA.position("max").right;
+            txt += "<br>positionMax-top: " + cssBoxA.position("max").top;
+            txt += "<br>positionMax-bottom: " + cssBoxA.position("max").bottom;
+            infor.innerHTML = txt;
+
+            console.log(boxA.innerText);
+            console.log(cssBoxA.position("max"));
+
+            var boxC = document.getElementById('boxC');
+            boxC.style.position = "absolute";
+            boxC.style.left = cssBoxA.position("min").right + "px";
+            boxC.style.top = cssBoxA.position("min").bottom + "px";
+            boxC.style.zIndex = 100011;
+
+            // infor.style.opacity = "0.5";
+
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>HTMLElement</h1>
+    <div id="infor" class="boxA" style="color: red;"></div>
+    <div id="boxA" class="boxA" style="width:400px;overflow: auto;">
+        <div dir="rtl">1. HTML</div>
+        <div dir="ltr">2. CSS</div>
+        <div>3. JS</div>
+        <div>4. NODEJS</div>
+        <div>5. NODEJS</div>
+        <div>6. NODEJS</div>
+        <div>7. NODEJS</div>
+    </div>
+    <input class="button" type="button" value="process" id="process" onclick="process();">
+
+    <div id="boxC" class="boxC"></div>
+</body>
+
+</html>

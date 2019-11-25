@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style-07-pratice.css">
+    <script src="js/myCssElement2.js"></script>
+    <title>Document</title>
+    <script type="text/javascript">
+        var t;
+        function process() {
+            var boxA = document.getElementById('boxA');
+            var cssBoxA = new myssElement(boxA).cssStyle();
+            // console.log(cssBoxA);
+
+            var firstNode = boxA.children[0];
+            var myCss = new myssElement(firstNode);
+            var cssFisrtNode = myCss.cssStyle();
+
+            firstNode.style.marginLeft = parseInt(cssFisrtNode.marginLeft) - 3 + "px";
+            var tmp = parseInt(firstNode.offsetWidth)
+                + parseInt(cssFisrtNode.marginLeft)
+                + parseInt(cssBoxA.paddingLeft);
+
+            console.log(tmp);
+            
+            if (tmp < 25) {
+                boxA.appendChild(firstNode);
+                firstNode.style.marginLeft = "0px";
+            }
+            t = setTimeout(process, 50);
+            console.log(tmp);
+        }
+
+        function stopMove() {
+            clearTimeout(t);
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>HTMLElement</h1>
+    <div id="boxA" class="boxA">
+        <div class="item floatLeft">
+            <h2>1. Manchester UTD</h2>
+            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus saepe accusantium quaerat ab impedit
+                dolor eum ut eveniet! Tempore temporibus provident, enim cumque cum earum dolore numquam ipsa laboriosam
+                labore?</div>
+        </div>
+        <div class="item floatLeft">
+            <h2>2. Manchester City</h2>
+            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus saepe accusantium quaerat ab impedit
+                dolor eum ut eveniet! Tempore temporibus provident, enim cumque cum earum dolore numquam ipsa laboriosam
+                labore?</div>
+        </div>
+        <div class="item floatLeft">
+            <h2>3. Liverpool</h2>
+            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus saepe accusantium quaerat ab impedit
+                dolor eum ut eveniet! Tempore temporibus provident, enim cumque cum earum dolore numquam ipsa laboriosam
+                labore?</div>
+        </div>
+        <div class="item floatLeft">
+            <h2>4. RealMarrid</h2>
+            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus saepe accusantium quaerat ab impedit
+                dolor eum ut eveniet! Tempore temporibus provident, enim cumque cum earum dolore numquam ipsa laboriosam
+                labore?</div>
+        </div>
+    </div>
+    <center>
+        <input class="button" type="button" value="process" id="process" onclick="process();">
+        <input class="button" type="button" value="top" id="top" onclick="stopMove();">
+    </center>
+</body>
+
+</html>

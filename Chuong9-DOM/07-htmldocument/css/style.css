@@ -1,3 +1,4 @@
+
 *{
    padding: 0px;
    margin: 0px;
@@ -10,12 +11,29 @@
    margin: 20px auto;
    padding: 10px;
 }
+.boxC {
+   width: 100px;
+   height: 100px;
+   background-color: #000;
+   opacity: 0.4;
+}
 
+.boxA > div {
+   border: 1px solid;
+   padding: 2px;
+   margin: 2px;
+}
 .color {
    color: blue;background-color:  darkgray;width: 400px;
 }
 
 .button {
+   border: 1px solid red;
+   font-size: 12px;
+   padding: 2px;
+}
+
+.input {
    border: 1px solid red;
    font-size: 12px;
    padding: 2px;
