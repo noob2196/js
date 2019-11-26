@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/mySupport.js"></script>
+    <title>Document</title>
+    <script>
+
+        window.onclick = function () {
+            var e = event || window.event;
+            console.log(e);
+
+            var pageXY = new mySupport();
+
+
+            var t = "screenX: " + e.screenX;
+            t += "<br>screenY: " + e.screenY;
+            t += "<br>clientX: " + e.clientX;
+            t += "<br>clientY: " + e.clientY;
+            t += "<br>pageX: " + pageXY.pageXY(e).pageX;
+            t += "<br>pageY: " + pageXY.pageXY(e).pageY;
+            var boxA = document.getElementById('boxA');
+            boxA.innerHTML = t;
+        }
+
+    //    window.onload = function() {
+    //        var boxA = document.getElementById('boxA');
+    //        boxA.onclick = function () {
+    //            alert('hell')
+    //        }
+    //    }
+
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Events</h1>
+    <div class="boxA" id="boxA" style="width: 1500px;">
+        Manchester UTD is the best footbal team
+    </div>
+</body>
+
+</html>

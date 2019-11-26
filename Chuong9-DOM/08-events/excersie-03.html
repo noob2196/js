@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/mySupport.js"></script>
+    <style>
+        u {
+            color: red;
+        }
+
+        .child {
+            height: 100px;
+            width: 100px;
+            background-color: chartreuse;
+        }
+        .row {
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+    <title>Document</title>
+    <script>
+
+        window.onload = function () {
+            var info = document.getElementById('info');
+            var elemt = info.children;
+            for (let index = 0; index < elemt.length; index++) {
+                const element = elemt[index];
+                element.onclick = function () {
+                    console.log(element);
+                    addElement(element);
+                }
+            }
+        }
+
+        function addElement(element) {
+            var boxA = document.getElementById("boxA");
+            element.style.backgroundColor = "yellow";
+            boxA.appendChild(element);
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Events</h1>
+    <div class="boxA" id="info" style="float:left;height: 200px;margin-right: 20px;">
+        <div>1.Manchester UTD</div>
+        <div>2.Manchester City</div>
+        <div>3.Real</div>
+        <div>4.Tot</div>
+        <div>5.DSF</div>
+        <div>6.243</div>
+        <div>7.fdfgf</div>
+    </div>
+
+    <div class="boxA" id="boxA" style="float:left;height: 200px;margin-left: 350px;">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/mySupport.js"></script>
+    <title>Document</title>
+    <script>
+
+        window.onmousedown = function () {
+            var e = event || window.event;
+            console.log(e.which);
+
+            var vType = new mySupport();
+
+            var t = vType.mouseButton(e);
+            var boxA = document.getElementById('boxA');
+            boxA.innerHTML = t;
+            disableRightClick(e);
+        }
+
+        function disableRightClick(e) {
+            var vType = new mySupport();
+            var t = vType.mouseButton(e);
+            if (t == "right") {
+                alert("Right click is disable!")
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Events</h1>
+    <div class="boxA" id="boxA">
+        Manchester UTD is the best footbal team
+    </div>
+</body>
+
+</html>

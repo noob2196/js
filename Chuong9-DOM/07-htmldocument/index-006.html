@@ -9,22 +9,20 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript">
         window.onload = function () {
-            console.log(document.forms);
-            console.log(document.appForm.user);
+            console.log(document.images);
+            console.log(document.images[1] + "");
+            console.log(document.images[1].src);
         }
     </script>
 </head>
 
 <body>
     <h1>HTMLDocument</h1>
-    <form action="abc.php" name="appForm" method="post" enctype="multipart/form-data">
-        <label>User: </label>
-        <input type="text" name="user" class="input">
-    </form>
-    <form action="abc.php" name="appWeb" method="post" enctype="multipart/form-data">
-        <label>Email: </label>
-        <input type="text" name="email" class="input">
-    </form>
+   <img src="images/1.jpg" alt="" width="150" style="border: solid 1px #ccc">
+   <img src="images/2.jpg" alt="" width="150" style="border: solid 1px #ccc">
+   <img src="images/3.jpg" alt="" width="150" style="border: solid 1px #ccc">
+   <img src="images/4.jpg" alt="" width="150" style="border: solid 1px #ccc">
+   <img src="images/5.jpg" alt="" width="150" style="border: solid 1px #ccc">
 </body>
 
 </html>

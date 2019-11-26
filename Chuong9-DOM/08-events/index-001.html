@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <script>
+        function way_01() {
+            var boxA = document.getElementById('boxA');
+            boxA.style.backgroundColor = "#FCF"
+        }
+
+        window.onload = function () {
+            var boxA = document.getElementById('boxA');
+            var way02 = document.getElementById('way02');
+            way02.onclick = function () {
+                boxA.style.backgroundColor = "#AEF"
+            }
+            var way03 = document.getElementById('way03');
+            if (typeof(way03.addEventListener) == "function") {
+                way03.addEventListener('click',way_03,false);
+            } else {
+                way03.attachEvents('onclick',way_03);
+            }
+        }
+
+        function way_03() {
+            var boxA = document.getElementById('boxA');
+            boxA.style.backgroundColor = "#BBD"
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Events</h1>
+    <div class="boxA" id="boxA">
+        Manchester UTD is the best footbal team
+    </div>
+    <center>
+        <input type="button" class="button" value="Way 01" id="way01" onclick="way_01();">
+        <input type="button" class="button" value="Way 02" id="way02">
+        <input type="button" class="button" value="Way 03" id="way03">
+    </center>
+</body>
+
+</html>
