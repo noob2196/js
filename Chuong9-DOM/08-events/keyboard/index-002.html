@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Keyboard event</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.onload = function () {
+            var t = "";// keycode
+            var t1 = "";// char
+            document.onkeydown = function () {
+                var e = event || window.event;
+                console.log(e);
+                var boxA = document.getElementById('boxA');
+                boxA.innerHTML = boxA.innerHTML + "onkeydown <br/>";
+            }
+
+            document.onkeyup = function () {
+                var e = event || window.event;
+                console.log(e);
+                var boxA = document.getElementById('boxA');
+                boxA.innerHTML = boxA.innerHTML + "onkeyup <br/>";
+            }
+
+            document.onkeypress = function () {
+                var e = event || window.event;
+                console.log(e);
+                var boxA = boxA.innerHTML+  document.getElementById('boxA');
+                boxA.innerHTML = boxA.innerHTML + "onkeypress <br/>";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="boxA" class="boxA"></div>
+</body>
+
+</html>

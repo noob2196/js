@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Keyboard event</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.onload = function () {
+            var content = document.appForm.content;
+            content.onchange = content.onkeyup = function () {
+                var charLength = document.getElementById('charLength');
+                if (this.value.length >= 100) {
+                    this.value = this.value.substr(0, 100);
+                }
+                charLength.innerHTML = this.value.length;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Keyboard event</h1>
+    <form action="" name="appForm" method="post" enctype="multipart/form-data" class="boxA">
+        <label>Content:</label>
+        <br />
+        <textarea name="content" id="" cols="58" rows="8" class="input"></textarea>
+        <br />
+        Giới hạn kí tự là 100(Số kí tự hiện thời <span id="charLength">0</span>)
+    </form>
+</body>
+
+</html>

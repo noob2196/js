@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Keyboard event</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.onload = function () {
+            var txtMoney = document.appForm.money;
+            var t = "Nhập số tiền vào đây...";
+            if (txtMoney.value == "") {
+                txtMoney.value = t;
+                txtMoney.style.color = "#CCC";
+            }
+            txtMoney.onclick = function () {
+                if (this.value == t) {
+                    this.value = "";
+                    this.style.color = "#000";
+                    this.style.backgroundColor = "#FCCB";
+                }
+            }
+            txtMoney.onkeyup = function () {
+                var vMoney = this.value;
+                vMoney = vMoney.replace(/[^\d]+/g, '');
+                var vNewMoney = ""
+                if (vMoney.length > 3) {
+                    console.log(vMoney.length);
+                    var x = 1;
+                    for (let index = vMoney.length - 1; index >= 0; index--) {
+                        const element = vMoney[index];
+                        console.log("phan tu["+ index + "] =" + element);
+                        vNewMoney = vNewMoney + "" + element;
+                        if (x%3 == 0) {
+                            vNewMoney = vNewMoney + ".";
+                        }
+                        x++;
+                    }
+                    
+                    var tmp = "";
+                    for(var i = vNewMoney.length-1;i>=0;i--) {
+                        tmp = tmp + "" + vNewMoney[i];
+                    }
+                    vMoney = tmp.replace(/^[\.]+/g,"");
+                    console.log(tmp);
+                } else {
+                    vMoney = vMoney;
+                }
+                this.value = vMoney;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Keyboard event</h1>
+    <form action="" name="appForm" method="post" enctype="multipart/form-data" class="boxA">
+        <label>Money:</label>
+        <br />
+        <input name="money" type="text" value="" class="input"></input>
+    </form>
+</body>
+
+</html>

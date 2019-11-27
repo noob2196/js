@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Event</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.onbeforeunload = function () {
+            alert("Dangerous!");
+            return "You will log out my wesite, are you sure?";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Object Events</h1>
+    <h3>onload - onunload - onresize - onscroll</h3>
+</body>
+  
+</html>

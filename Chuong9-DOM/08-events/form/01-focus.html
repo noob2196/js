@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.onload = function () {
+            var txtUsername = document.appForm.username;
+
+            txtUsername.onfocus = function () {
+                this.style.setProperty("background-color","#CFC")
+            }
+
+            txtUsername.onblur = function () {
+                this.style.removeProperty("background-color");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Form events</h1>
+    <h3>onblur - onchange - onfocus - onreset - onselect - onsubmit</h3>
+    <div id="boxA" class="boxA">
+        <form action="process.php" name="appForm" method="post" enctype="multipart/form-data">
+            <ul class="list">
+                <li>
+                    <label>Account:</label>
+                    <input type="text" name="username" class="input txtShort">
+                </li>
+                <li>
+                    <label>Password:</label>
+                    <input type="password" name="password" class="input txtShort"> 
+                </li>
+                <li>
+                    <label>Email:</label>
+                    <input type="email" name="email" class="input txtShort">
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+
+</html>
